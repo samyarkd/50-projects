@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Rubik", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden ;
+}
+
+
+
+/*  Pro */
+.bg-image {
+    /* The image used */
+    background-image: url('https://images.unsplash.com/photo-1641739905816-98e62fd6fa27?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80');
+  
+    /* Add the blur effect */
+    filter: blur(60px);
+    -webkit-filter: blur(60px);
+    transform: scale(1.2); 
+
+  
+    /* Full height */
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+.container {
+    display: flex;
+    width: 90vw;
+}
+
+.panel {
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 12px ;
+    color: white;
+    cursor: pointer;
+    flex: 1;
+    margin: 20px;
+    position: relative;
+    transition: flex 0.7s ease-in;
+
+}
+
+.panel > div {
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    opacity: 0;
+
+}
+
+.panel.active {
+    flex: 5;
+    box-shadow: none;
+}
+
+.panel.active > div {
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+
+@media only screen and (max-width: 1000px) {
+    .container {
+        width: 100vw;
+    }
+
+    .panel {
+        flex: 0.5;
+        margin: 10px;
+    }
+    
+}
+
+@media only screen  and ( max-width: 550px) {
+    .panel {
+        margin: 5px;
+    }
+}
+
+
+@media only screen and (max-width: 450px) {
+    .panel:nth-of-type(5),.panel:nth-of-type(6) {
+        display: none;
+    }
+}
+
