@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Rubik", sans-serif !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden ;
+    user-select: none;
+}
+
+
+/* Pro */
+
+.body-progress {
+    content: "";
+    width: 0%;
+    height: 7px;
+    box-shadow: 3px 0 10px rgb(8, 114, 235);
+    background: rgb(8, 114, 235);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: ease-in-out 0.4s;
+}
+
+
+.container {
+    text-align: center;
+}
+
+.progress-container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 50px;
+    width: 400px;
+    max-width: 100%;
+}
+
+.progress-container::before {
+    content: "";
+    background-color: rgb(200, 200, 200);
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    z-index: -1;
+    transform: translateY(-50%);
+}
+
+.progress {
+    position: absolute;
+    background-color: rgb(8, 114, 235);
+    width: 0;
+    height: 3px;
+    top: 50%;
+    left: 0;
+    z-index: -1;
+    transform: translateY(-50%);
+    transition: ease 0.4s;
+    box-shadow: 0 0 40px rgb(8, 114, 235);
+}
+
+.circle {
+    background-color: #fff;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: rgb(200, 200, 200) 3px solid;
+    transition: ease 0.4s;
+    outline: none;
+}
+.circle.active {
+    border: rgb(8, 114, 235) 3px solid;
+    box-shadow: 0 0 10px rgb(8, 114, 235);
+}
+
+.btn {
+    background-color: rgb(8, 114, 235);
+    border: none;
+    color: #fff;
+    padding: 0.5rem 1.2rem;
+    margin: 0px 1rem;
+    transition: ease-in-out 0.2s;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn:disabled{
+    background-color: rgb(200, 200, 200);
+    cursor: not-allowed;
+}
