@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Rubik", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+
+@keyframes magicBG{
+    0% {background-color: rgb(26, 111, 221);}
+    10% {background-color: rgb(26, 215, 221);}
+    20% {background-color: rgb(26, 221, 189);}
+    30% {background-color: rgb(26, 221, 140);}
+    40% {background-color: rgb(26, 221, 107);}
+    50% {background-color: rgb(137, 221, 26);}
+    60% {background-color: rgb(221, 192, 26);}
+    70% {background-color: rgb(221, 98, 26);}
+    80% {background-color: rgb(221, 26, 26);}
+    90% {background-color: rgb(221, 26, 124);}
+    100% {background-color: rgb(94, 26, 221);}
+}
+
+.content {
+    margin: 3rem;
+    padding: 1rem 6rem;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 8px;
+    color: #fff;
+    box-shadow: 0 0 10px rgb(207, 207, 207);
+    animation: magicBG 30s linear infinite;
+    transform: translateX(-400%) rotate(90deg);
+    transition: transform 0.4s ease;
+    transform-origin: bottom left;
+    
+}
+
+.content:nth-of-type(even) {
+    transform: translateX(+400%)  rotate(90deg);
+    transform-origin: bottom right;
+}
+
+.content.show {
+    transform: translateX(0) rotate(0);
+
+}
