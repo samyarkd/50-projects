@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Rubik", sans-serif;
+   height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    user-select: none;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+
+}
+
+/* Project */
+
+.split {
+position: absolute;
+width: 50%;
+height: 100%;
+overflow: hidden;
+transition: width 0.5s linear;
+}
+
+.split.left {
+    left: 0;
+    background-image: url('https://images.unsplash.com/photo-1632747670377-0f5870ec13cb?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=reet-talreja-VP6dsRglyNY-unsplash.jpg&w=2400');
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+    background-position: center;
+
+}
+
+.split.right {
+    right: 0;
+    background-image: url('https://images.unsplash.com/photo-1605899435973-ca2d1a8861cf?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=diego-marin-dMoBlbpDnAE-unsplash.jpg&w=2400');
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+    background-position: center;
+}
+
+.split {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+    font-size: 2rem;
+    white-space: nowrap;
+    
+}
+
+
+
+.btn {
+    border: 3px solid black;
+    padding: 1rem 4rem;
+    text-decoration: none;
+    color: #fff;
+    transition: background-color 0.2s ease, border-radius 0.2s ease;
+}
+
+.right .btn{
+    background-color: rgba(8, 141, 63, 0.301);
+
+}
+
+.split.left .btn {
+    background-color: rgba(34, 34, 34, 0.514);
+}
+
+
+.right .btn:hover{
+    background-color: rgb(8, 141, 63);
+    color: #000;
+    border-radius: 8px;
+
+}
+
+.split.left .btn:hover {
+    background-color: rgb(34, 34, 34);
+    color: rgb(255, 255, 255);
+    border-radius: 8px;
+}
+
+.hover-left .left {
+    width: 75%;
+}
+
+.hover-left .right {
+    width: 25%;
+}
+
+.hover-right .right {
+    width: 75%;
+}
+
+.hover-right .left {
+    width: 25%;
+}
