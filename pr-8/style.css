@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Rubik", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden ;
+}
+
+
+.container {
+    /* border: 2px solid rgba(0, 0, 0, 0.651); */
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(230, 230, 230, 0.651)
+}
+
+.container h1 {
+    margin-bottom: 3rem;
+}
+
+.form-control {
+    position: relative;
+    margin: 20px 0 40px;
+}
+
+.form-control input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+    width: 100%;
+    font-size: 1.3rem;
+    padding: 0.5rem 0.1rem;
+}
+
+.form-control input:focus ,
+.form-control input:valid{
+    outline: none;
+    border-bottom-color: rgb(204, 204, 204);
+
+}
+.form-control label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+
+.btn {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(221, 221, 221, 0.651);
+    padding: 0.8rem;
+    border-radius: 8px;
+    font-size: large;
+    transition: transform 0.2s linear;
+}
+
+.btn:active {
+    transform: scale(0.93);
+}
+
+.text a {
+    text-decoration: none;
+    color: grey;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.form-control label span {
+    display: inline-block;
+    font-size: 1rem;
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-control input:focus + label span,
+.form-control input:valid + label span {
+    color: rgb(204, 204, 204);
+    transform: translateY(-30px);
+}
