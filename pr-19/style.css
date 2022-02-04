@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Heebo:300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Heebo:300&display=swap");
 
 * {
     box-sizing: border-box;
@@ -6,7 +6,7 @@
 
 :root {
     --primary-color: #000;
-    --secondary-color: #fff
+    --secondary-color: #fff;
 }
 
 html {
@@ -31,7 +31,7 @@ body {
     height: 100vh;
     margin: 0 !important;
     padding: 0 !important;
-    overflow: hidden ;
+    overflow: hidden;
 }
 
 .toggle {
@@ -64,6 +64,7 @@ body {
     position: relative;
     justify-content: center;
     align-items: center;
+    margin-bottom: 5rem;
 }
 
 .needle {
@@ -74,18 +75,20 @@ body {
     top: 50%;
     left: 50%;
     transform-origin: bottom center;
-    transition: 0.3s ease-in-out;
+    transition: 0.5s ease;
 }
 
 .needle.hour {
     transform: translate(-50%, -100%) rotate(0deg);
 }
+
 .needle.minute {
     transform: translate(-50%, -100%) rotate(0deg);
     height: 100px;
 }
+
 .needle.second {
-    transform: translate(-50%, -100%) rotate( 0deg);
+    transform: translate(-50%, -100%) rotate(0deg);
     height: 100px;
     background-color: red;
 }
@@ -121,4 +124,119 @@ body {
     justify-content: center;
     align-items: center;
     transition: all 0.3s ease;
+}
+
+
+.numbers {
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    text-align: center;
+}
+
+.numbers.minutes {
+    width: 120%;
+    height: 120%;
+}
+
+.numbers span {
+    display: block;
+    color: var(--primary-color);
+    font-size: 16px;
+    text-shadow: 0 5px 18px #00000026, 0 2px 3px #00000033;
+    opacity: 0;
+    transition: 0.5s ease;
+}
+
+
+.minutes span {
+    font-size: 8px !important;
+    color: rgb(129, 129, 129);
+}
+.numbers:nth-child(1) {
+    transform: rotate(30deg);
+}
+
+.numbers:nth-child(1) span {
+    transform: rotate(-30deg);
+}
+
+.numbers:nth-child(2) {
+    transform: rotate(60deg);
+}
+
+.numbers:nth-child(2) span {
+    transform: rotate(-60deg);
+}
+
+.numbers:nth-child(3) {
+    transform: rotate(90deg);
+}
+
+.numbers:nth-child(3) span {
+    transform: rotate(-90deg);
+}
+
+.numbers:nth-child(4) {
+    transform: rotate(120deg);
+}
+
+.numbers:nth-child(4) span {
+    transform: rotate(-120deg);
+}
+
+.numbers:nth-child(5) {
+    transform: rotate(150deg);
+}
+
+.numbers:nth-child(5) span {
+    transform: rotate(-150deg);
+}
+
+.numbers:nth-child(6) {
+    transform: rotate(180deg);
+}
+
+.numbers:nth-child(6) span {
+    transform: rotate(-180deg);
+}
+
+.numbers:nth-child(7) {
+    transform: rotate(210deg);
+}
+
+.numbers:nth-child(7) span {
+    transform: rotate(-210deg);
+}
+
+.numbers:nth-child(8) {
+    transform: rotate(240deg);
+}
+
+.numbers:nth-child(8) span {
+    transform: rotate(-240deg);
+}
+
+.numbers:nth-child(9) {
+    transform: rotate(270deg);
+}
+
+.numbers:nth-child(9) span {
+    transform: rotate(-270deg);
+}
+
+.numbers:nth-child(10) {
+    transform: rotate(300deg);
+}
+
+.numbers:nth-child(10) span {
+    transform: rotate(-300deg);
+}
+
+.numbers:nth-child(11) {
+    transform: rotate(330deg);
+}
+
+.numbers:nth-child(11) span {
+    transform: rotate(-330deg);
 }

@@ -1,10 +1,47 @@
 const html = document.querySelector("html");
-const hourEl = document.querySelector(".hour");
-const minuteEl = document.querySelector(".minute");
-const secondEl = document.querySelector(".second");
 const timeEl = document.querySelector(".time");
 const dateEl = document.querySelector(".date");
 const toggleEl = document.querySelector(".toggle");
+const clockEl = document.querySelector(".clock");
+
+for (let i = 1; i < 13; i++) {
+  const spanEl = document.createElement("span");
+  spanEl.classList.add("numbers");
+  spanEl.innerHTML = `<span>${i}</span>`;
+  clockEl.append(spanEl);
+}
+
+let deg = 6;
+
+for (let i = 1; i < 60; i++) {
+  // if (i % 5 !== 0) {
+  const spanEl = document.createElement("span");
+  spanEl.classList.add("numbers", "minutes");
+  spanEl.innerHTML = `<span>${i}</span>`;
+  spanEl.style.transform = `rotate(${deg}deg)`;
+  spanEl.firstChild.style.transform = `rotate(${-deg}deg)`;
+  clockEl.append(spanEl);
+  // }
+  deg = deg + 6;
+}
+
+const numbers = document.querySelectorAll(".numbers");
+
+const hourNeedle = document.createElement("div");
+hourNeedle.classList.add("needle", "hour");
+const minuteNeedle = document.createElement("div");
+minuteNeedle.classList.add("needle", "minute");
+const secondNeedle = document.createElement("div");
+secondNeedle.classList.add("needle", "second");
+const centerPoint = document.createElement("div");
+centerPoint.classList.add("center-point");
+clockEl.appendChild(hourNeedle);
+clockEl.appendChild(minuteNeedle);
+clockEl.appendChild(secondNeedle);
+clockEl.appendChild(centerPoint);
+const hourEl = document.querySelector(".hour");
+const minuteEl = document.querySelector(".minute");
+const secondEl = document.querySelector(".second");
 
 const days = [
   "Sunday",
@@ -53,7 +90,7 @@ function setTime() {
   const hourForClock = hour % 12;
 
   timeEl.innerText = `${hour}:${minute}`;
-  dateEl.innerHTML = `${months[month]}, ${days[day]} <span class="circle">${day}</span>`
+  dateEl.innerHTML = `${months[month]}, ${days[day]} <span class="circle">${day}</span>`;
 
   hourEl.style.transform = `translate(-50%, -100%) rotate(${scale(
     hourForClock,
@@ -78,6 +115,37 @@ function setTime() {
     0,
     360
   )}deg)`;
+  const hourForShow =
+    String(hourForClock) === "0" ? "12" : String(hourForClock);
+
+  numbers.forEach((number) => {
+    if (
+      number.innerText === hourForShow &&
+      !number.classList.contains("minutes")
+    ) {
+      number.firstChild.style.opacity = "1";
+    }
+    if (
+      number.innerText === String(minute) &&
+      number.classList.contains("minutes")
+    ) {
+      number.firstChild.style.opacity = "1";
+    }
+    if (
+      number.innerText === String(second) &&
+      number.classList.contains("minutes")
+    ) {
+      number.firstChild.style.opacity = "1";
+    }
+
+    if (
+      number.innerText !== hourForShow &&
+      number.innerText !== String(minute) &&
+      number.innerText !== String(second)
+    ) {
+      number.firstChild.style.opacity = "0";
+    }
+  });
 }
 
 function scale(number, inMin, inMax, outMin, outMax) {
