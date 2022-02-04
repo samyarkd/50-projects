@@ -17,6 +17,6 @@ buttons.forEach((btn) => {
     ripple.style.left = xIn + "px";
 
     this.appendChild(ripple);
-    await setTimeout( () => ripple.remove(), 500);
+    setTimeout(() => ripple.remove(), 500);
   });
 });
