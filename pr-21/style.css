@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+* {
+    box-sizing: border-box !important;
+}
+
+body {
+    font-family: 'Source Code Pro', monospace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden ;
+    background: rgb(37, 37, 37);
+    gap: 2rem;
+}
+
+.empty {
+    width: 150px;
+    height: 150px;
+    background-color: #fff;
+    
+    border:  3px solid rgb(   0, 0, 0);
+    transition: 0.3s ease;
+}
+.fill {
+    background-image: url('https://source.unsplash.com/random/150x150');
+    width: 145px;
+    height: 145px;
+    cursor: pointer;
+}
+
+.hold {
+    border: 5px solid #ccc;
+}
+
+.hovered {
+    background-color: #333;
+    transition: 0.3s ease;
+    border: 3px dashed #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hovered span {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+@media screen and (max-width: 900px) {
+    body {
+        flex-direction: column;
+    }
+}
