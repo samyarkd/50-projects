@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Rubik", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background: rgb(240, 240, 240);
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgb(255, 42, 42);
+    border-radius: 2px;
+    box-shadow: 0 0px 10px rgba(255, 49, 49, 0.2);
+    
+}
+
+canvas {
+    background: #fff;
+}
+
+.wrapper .toolbox {
+    width: 100%;
+    background: rgb(255, 42, 42) ;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.toolbox > * {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+    cursor: pointer;
+    border: none;
+    font-size: xx-large;
+    transition: transform 0.2s ease-in;
+    border-radius: 4px;
+    box-shadow: 0 3px 6px rgba(255, 255, 255, 0.5);
+}
+
+.toolbox > *:active {
+    transform: scale(0.95) ;
+    
+}
+
+.toolbox > :nth-child(2) {
+    transform: none ;
+    box-shadow: none;
+    cursor: default;
+    color: rgb(42, 255, 255);
+    mix-blend-mode: difference;
+}
+
+.toolbox>:last-child {
+    margin-left: auto;
+    margin-right: 0;
+}
