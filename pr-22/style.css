@@ -1,70 +1,60 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
-
 * {
     box-sizing: border-box;
 }
 
 body {
-    font-family: "Rubik", sans-serif;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
     margin: 0;
-    background: rgb(240, 240, 240);
+    overflow: hidden ;
+    background: #2c3e50;
 }
 
-.wrapper {
-    display: flex;
-    flex-direction: column;
-    border: 2px solid rgb(255, 42, 42);
-    border-radius: 2px;
-    box-shadow: 0 0px 10px rgba(255, 49, 49, 0.2);
-    
+.kinetic {
+    position: relative;
+    height: 80px;
+    width: 80px;
 }
 
-canvas {
-    background: #fff;
+.kinetic::before,.kinetic::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 0;
+    border: 50px solid transparent;
+    border-bottom-color: #fff;
+    animation: animateA 2s cubic-bezier(0.95, 0.05, 0.795, 0.035) 0.5s infinite ;
 }
 
-.wrapper .toolbox {
-    width: 100%;
-    background: rgb(255, 42, 42) ;
-    padding: 1rem;
-    display: flex;
-    align-items: center;
+.kinetic::before{
+    transform: rotate(90deg);
+    animation: animateB 2s cubic-bezier(0.95, 0.05, 0.795, 0.035) infinite ;
 }
 
-.toolbox > * {
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 1rem;
-    cursor: pointer;
-    border: none;
-    font-size: xx-large;
-    transition: transform 0.2s ease-in;
-    border-radius: 4px;
-    box-shadow: 0 3px 6px rgba(255, 255, 255, 0.5);
+@keyframes animateA {
+    0%, 25% {
+        transform: rotate(0);
+    }
+    50%, 75% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg); 
+    }
 }
 
-.toolbox > *:active {
-    transform: scale(0.95) ;
-    
-}
-
-.toolbox > :nth-child(2) {
-    transform: none ;
-    box-shadow: none;
-    cursor: default;
-    color: rgb(42, 255, 255);
-    mix-blend-mode: difference;
-}
-
-.toolbox>:last-child {
-    margin-left: auto;
-    margin-right: 0;
+@keyframes animateB {
+    0%, 25% {
+        transform: rotate(90);
+    }
+    50%, 75% {
+        transform: rotate(270deg);
+    }
+    100% {
+        transform: rotate(450deg); 
+    }
 }
