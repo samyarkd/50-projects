@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Rubik", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0 ;
+    overflow: hidden ;
+}
+ img {
+    max-width: 100%;
+
+}
+
+.card {
+    box-shadow: 0 0px 51px rgba(0, 0, 0, 0.13);
+    width: 350px;
+    border-radius: 10px;
+}
+
+.card-header {
+    height: 200px;
+}
+
+
+.card-header img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%    ;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+  
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-title {
+    height: 20px;
+    margin: 0px;
+}
+
+.card-excerpt {
+    color: #777;
+    margin: 10px 0 20px;
+}
+
+.author {
+    display: flex;
+    align-items: center;
+}
+
+.profile-img {
+    border-radius: 50%;
+    overflow:  hidden;
+    height: 40px;
+    width: 40px;
+}
+
+.author-info {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.author-info small {
+    color: #aaa;
+}
+
+.animated-bg {
+    background-image: linear-gradient(
+      to right,
+      #f6f7f8 0%,
+      #edeef1 10%,
+      #f6f7f8 20%,
+      #f6f7f8 100%
+    );
+    background-size: 200% 100%;
+    animation: bgPos 1s linear infinite;
+  }
+  
+  .animated-bg-text {
+    border-radius: 50px;
+    display: inline-block;
+    margin: 0;
+    height: 10px;
+    width: 100%;
+  }
+
