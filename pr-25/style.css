@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Rubik", sans-serif;
+    z-index: -10;
+}
+
+.wrapper {
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    perspective: 10px;
+    z-index: -10;
+}
+
+.container {
+    max-width: 1200px;
+    margin:  0 auto;
+}
+
+.nav{ 
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    background-color: #222;
+    padding: 25px;
+    transition: all 0.5s ease;
+}
+
+.nav.active {
+    background-color: #fff;
+    padding: 15px !important;
+    transition: all 0.5s ease;
+
+}
+
+.nav.active a{
+    color: #222 !important;
+    transition: all 0.5s ease;
+}   
+
+.nav a.active , .nav a:hover{
+    font-weight: bold;
+    color: rgb(230, 23, 33) !important;
+}
+
+
+
+.nav > .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav > .container a {
+    color: #fff;
+    text-decoration: none;
+
+}
+
+.nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+}
+
+.nav li {
+    margin: 0 0 0 20px;
+} 
+
+
+.hero {
+    height: 100vh;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    transform-style: preserve-3d;
+    z-index:-1;
+}
+
+.hero img {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    transform: translateZ(-10px) scale(2);
+}
+.hero > * {
+    z-index: 1;
+}
+
+.hero::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero h1 {
+    font-size: 42px;
+}
+
+
+.hero p{
+    font-size: 20px;
+    letter-spacing: 0.5px;
+}
+
+
+
+.content {
+    padding: 20px;
+    height: 100vh;
+    background-color: #fff;
+    z-index: 10 !important;
+    color: #222;
+}
+
+.content h2 {
+    margin: 0 0 25px 0
+}
+
+.content > *:nth-child(3) {
+    margin-top: 25px;
+}
+
+.content p {
+    letter-spacing: 0.6px;
+    font-size: 18px;
+    line-height: 30px;
+}
