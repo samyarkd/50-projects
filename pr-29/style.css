@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Rubik", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden ;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.img{ 
+    position: relative;
+    background-image: url("https://images.unsplash.com/photo-1644847381469-2be5141bac71?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80");
+    width: 250px;
+    height: 500px;
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.wrapper b {
+    color: red;
+}
+
+@keyframes heart {
+    50% {
+        transform: rotate(45deg)  scale(4);
+    }
+    100% {
+        transform: rotate(45deg)  scale(0);
+    }
+}
+.heart {
+    position: absolute;
+    transform: rotate(45deg)  scale(0) translate(50%, 50%);
+    animation: heart 0.5s ease;
+
+}
+
+
+.heart div {
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    box-shadow: 0 3px 6px rgba(255, 0, 0, 0.5);
+}
+
+.heart div span {
+    position: absolute;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    left: 0;
+    transform: translateY(-50%);
+    top: 0;
+    border-radius: 50%;
+    box-shadow: 0 -5px 6px rgba(255, 0, 0, 0.5);
+}
+.heart div span:nth-child(2) {
+    position: absolute;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    top: 0;
+    left: 0;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    box-shadow: -5px 0 6px rgba(255, 0, 0, 0.5);
+}
