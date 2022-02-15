@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display&family=Roboto+Mono:wght@300&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  background-color: cadetblue;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: darkred;
+  color: #fff;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.container h2 {
+  text-align: center;
+}
+
+.result-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: red;
+  font-weight: bolder;
+  margin: 1rem 0;
+}
+
+.result-container span {
+  letter-spacing: 2px;
+  font-family: "Roboto Mono", monospace;
+  padding: 0 3rem 0 0;
+}
+.result-container button {
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  border-radius: 2px;
+  box-shadow: 0 3px 8px rgba(255, 255, 255, 0.4);
+  outline: none;
+  transition: 200ms ease;
+}
+
+.result-container button:active {
+  transform: scale(0.95);
+}
+
+.btn {
+  border: none;
+  padding: 1rem;
+  margin-top: 1rem;
+  background-color: red;
+  color: #fff;
+  letter-spacing: 1px;
+  font-weight: bolder;
+  font-family: 'Rubik';
+  font-size: larger;
+  cursor: pointer;
+  border-radius: 4px;
+  outline: none;
+  transition: transform 0.5s ease;
+  box-shadow: 0 3px 6px rgba(255, 0, 0, 0.5);
+
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+.settings {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.1rem;
+}
+
+.setting {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.7rem 0;
+}
