@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
+  background-color: aliceblue;
+}
+
+h1 {
+  font-size: 150px;
+  text-transform: capitalize;
+  color: cadetblue;
+  text-shadow: 0 0 6px cadetblue;
+}
+
+.input {
+  border: none;
+  outline: none;
+  padding: 1rem 0.5rem;
+  width: 20rem;
+  font-size: larger;
+  border-radius: 4px;
+  box-shadow: 0 0 6px #ddd;
+}
+
+.todos {
+  width: 100%;
+  padding: 0.5rem 0.2rem;
+  margin: 0;
+  position: relative;
+}
+
+.todo {
+  list-style-type: none;
+  text-align: left;
+  background-color: #fff;
+  height: 100%;
+  padding: 0.5rem;
+  cursor: pointer;
+  margin-bottom: 10px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+.todo.done {
+  text-decoration: line-through;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.todo.done::after {
+  content: "Done";
+  text-decoration: none;
+  position: absolute;
+  right: 10px;
+  color: aquamarine;
+}
+
+small {
+  margin-top: 2rem;
+  background-color: #fefefe;
+  padding: 0.5rem;
+  color: #8f8f8f;
+}
